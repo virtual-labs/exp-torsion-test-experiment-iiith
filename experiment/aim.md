@@ -9,4 +9,4 @@ Torsion occurs when any shaft is subjected to a torque. This is true whether the
 
  To find the angle of twist and to obtain some of the mechanical properties of the given material by conducting torsion test. 
 
-<a href="docs/Exp-4-Torsion-test.pdf">read more</a>
+

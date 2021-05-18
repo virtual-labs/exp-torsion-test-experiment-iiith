@@ -28,5 +28,5 @@ Observation :
 8. Load the machine in suitable increments, taking note of the torque and the corresponding angle of twist.
 9. Plot a graph between torque and angle of twist and calculate the value of G by using the following relation
 
-<a href="docs/Exp-4-Torsion-test.pdf">read more</a> 
+
 
