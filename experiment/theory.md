@@ -13,6 +13,6 @@ C = rigidity modulus of the material <br>
 ϴ = relative angle of twist in radians <br>
 L = gauge length (length of the shaft over which the relative angle of twist is measured) <br>
 
-<a href="docs/Exp-4-Torsion-test.pdf">read more</a>
+
 
 
