@@ -4,50 +4,57 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.5-b/css/style.min.css"/>
 		<link rel="stylesheet" href="./css/main.css">
 	</head>
 
 		<div class="columns is-centered">
 			<div class="column has-text-centered mt-2">
+				<button id="play" class="action-button">Play</button>
+				<button id="pause" class="action-button">Pause</button>
 				<button id="restart" class="action-button">Restart</button>
+				<div class="slidecontainer">
+					<p>Simulation speed: <span id="demo_speed"></span>x</p>
+					<input type="range" min="1" max="8" value="4" class="slider" id="speed">
+				</div>
 			</div>
 		</div>
 
-		<div class="columns is-mobile is-centered">
+		<div class="columns is-centered">
 			<div class="column has-text-centered">
-				<div class="hero is-small">
-					<div class="hero-body">
-						<canvas class="main" id="main"></canvas>
-					</div>
-				</div>
+				<canvas class="main" id="main"></canvas>
 			</div>
 		</div>
 		<div class="columns is-centered">
-			<div class="column has-text-centered is-one-quarter ml-2 mt-3">
-				<div class = "columns box mt-3 ml-2" >
-					<div class="column">
-						<span class="tag is-primary is-light">Length</span><br>
-						<span id="length">80 mm</span><br><br>
-						<span class="tag is-primary is-light">Diameter</span><br>
-						<span id="diameter">6 mm</span> <br><br>
-						<span class="tag is-primary is-light">Angle</span><br>
-						<span id = "angle">0.0 deg</span><br><br>
+			<div class="column is-one-fourth">
+				<div class="v-datalist-container">
+				  <div class="v-datalist-title">Observation Table</div>
+				  <div class="v-datalist-row v-bold">Length of Rod = 80mm</div>
+				  <div class="v-datalist-row v-bold">Diameter of Rod = 6mm</div>
+				  <div class="v-datalist-row v-bold">Polar MOI = 1.27235e-10 m<sup>4</sup></div>
+				  <div class="v-datalist-row v-bold">Modulus of Rigidity = 29.473138 GPa</div>
+				  <div class="v-datalist-row">
+					<div class="v-table-wrap">
+					  <table class="table is-bordered is-fullwidth">
+						<thead>
+						  <tr>
+							<th>Angle</th>
+							<th>Torque</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td id="angle">0.0 deg</td>
+							<td id="torque">0.0 N-m</td>
+						  </tr>
+						</tbody>
+					  </table>
 					</div>
-					<div class="column">
-						<span class="tag is-primary is-light">Polar MOI</span><br>
-						<span id = "moi">1.27235e-10 m<sup>4</sup></span><br><br>
-						<span class="tag is-primary is-light">Modulus of Rigidity</span><br>
-						<span id="rigidity">29.473138 GPa </span><br><br>
-
-						<span class="tag is-primary is-light">Torque</span><br>
-						<span id = "torque">0.0 N-m</span> 
-					</div>
+				  </div>
 				</div>
-			</div>
+			  </div>
 			<div class="column has-text-centered">
-				<div class="hero is-small">
-					<div id="chartContainer"></div>
-				</div>
+				<div id="chartContainer"></div>
 			</div>
 		</div>
 

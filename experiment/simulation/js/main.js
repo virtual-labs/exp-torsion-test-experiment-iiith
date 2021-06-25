@@ -2,30 +2,65 @@
 
 document.addEventListener('DOMContentLoaded', function(){
 
+	// RAW DATA USED IN THE SIMULATION
 	const angle = [0.3 , 1.2 , 2.1 , 2.7 , 3.6 , 4.5 , 5.4 , 6.3 , 7.2 , 8.1 , 9 , 9.9 , 10.8 , 11.7 , 12.6 , 13.5 , 14.4 , 18 , 27 , 36 , 45 , 51 , 60 , 150 , 240 , 600 , 1500 , 1800 , 1887];
 	const torque = [0.2 , 0.9 , 1.7 , 2.2 , 3.1 , 3.8 , 4.6 , 4.8 , 5.3 , 5.5 , 5.6 , 6 , 5.8 , 5.9 , 5.8 , 5.9 , 5.9 , 5.8 , 5.8 , 5.8 , 5.9 , 6 , 6 , 6.3 , 6.3 , 6.3 , 6.4 , 6.5 , 6.5];
-	const charts = [{xx:0.0,yy:0.0},{xx:0.3,yy:0.2},{xx:1.2,yy:0.9},{xx:2.1,yy:1.7},{xx:2.7,yy:2.2},{xx:3.6,yy:3.1},{xx:4.5,yy:3.8},{xx:5.4,yy:4.6},{xx:6.3,yy:4.8},{xx:7.2,yy:5.3},{xx:8.1,yy:5.5},{xx:9,yy:5.6},{xx:9.9,yy:6},{xx:10.8,yy:5.8},{xx:11.7,yy:5.9},{xx:12.6,yy:5.8},{xx:13.5,yy:5.9},{xx:14.4,yy:5.9},{xx:18,yy:5.8},{xx:27,yy:5.8},{xx:36,yy:5.8},{xx:45,yy:5.9},{xx:51,yy:6},{xx:60,yy:6},{xx:150,yy:6.3},{xx:240,yy:6.3},{xx:600,yy:6.3},{xx:1500,yy:6.4},{xx:1800,yy:6.5},{xx:1887,yy:6.5}];;
 
 	const restartButton = document.getElementById('restart');
-
 	restartButton.addEventListener('click', function() {restart();});
 
+	const playButton = document.getElementById('play');
+	playButton.addEventListener('click',function(){play();});
+
+	const pauseButton = document.getElementById('pause');
+	pauseButton.addEventListener('click',function(){pause();});
+
+	const slider = document.getElementById('speed');
+	const output = document.getElementById('demo_speed');
+	output.innerHTML = (slider.value)/4;
+	slider.oninput = function() {
+		output.innerHTML = (this.value)/4;
+		FPS = originalFPS*(output.innerHTML);
+		restart();
+	};
+
+	function setAll()
+	{
+		step=0;
+		coordinates = [];
+		flag = 0;
+		currentAngle = 0;
+		document.getElementById("angle").innerHTML = "0.0 deg";
+		document.getElementById("torque").innerHTML = "0.0 N-m";
+	}
 	function restart() 
 	{ 
 		window.clearTimeout(tmHandle); 
-		window.clearTimeout(id);
+		setAll();
 		graph();
-		flag = 0;
-		current_angle = 0;
-		tmHandle = window.setTimeout(draw, 1000 / fps); 
+		play();
 	}
-	
 
-	function drawobj(ctx, obj ,color)
+	function play()
+	{
+		tmHandle = window.setTimeout(draw, 1000 / FPS);
+		pauseButton.removeAttribute("disabled");
+		restartButton.removeAttribute("disabled");
+		playButton.setAttribute("disabled","true");
+	}
+
+	function pause()
+	{
+		window.clearTimeout(tmHandle);
+		pauseButton.setAttribute("disabled","true");
+		playButton.removeAttribute("disabled");
+	}
+
+	function drawObject(ctx, obj ,color)
 	{
 		ctx.save();
 		ctx.fillStyle = color;
-		ctx.strokeStyle = "black";
+		ctx.strokeStyle = color;
 		ctx.beginPath();
 		ctx.moveTo(obj[0][0], obj[0][1]);
 
@@ -41,90 +76,99 @@ document.addEventListener('DOMContentLoaded', function(){
 		ctx.restore();
 	}
 
-	
+
 	const canvas = document.getElementById("main");
-	canvas.width = 900;
+	canvas.width = 600;
 	canvas.height = 100;
 	canvas.style = "border:3px solid;";
 	const ctx = canvas.getContext("2d");
 
-	const fill = "#A9A9A9";
-	const border = "black";
+	const fill = "black";
 	const lineWidth = 1.5;
-	const fps = 20;
-	let id;
-
+	const originalFPS = 10;
+	let FPS = 10;
+	let tmHandle;
+	
 	const mid = 50;
-	const startx = 200;
+	const startX = 50;
 	const radius = 20;
-	let current_angle = 0;
+	let currentAngle = 0;
 	// heights starting from the left side 
 	const ht = [20,10,25,10,15,8,13,15,13,25,6,2,6,23];
 	const width = [0,10,50,100,220,230,380,395,405,410,430,435,465,470,490];
 	let flag = 0;
 
 	const rod1 = [
-		[startx + width[10] , mid+17],
-		[startx + width[13] , mid+17],
-		[startx + width[13], mid+15],
-		[startx + width[10], mid+15]
+		[startX + width[10] , mid+17],
+		[startX + width[13] , mid+17],
+		[startX + width[13], mid+15],
+		[startX + width[10], mid+15]
 	]
 
 	const rod2 = [
-		[startx + width[10] , mid-17],
-		[startx + width[13] , mid-17],
-		[startx + width[13], mid-15],
-		[startx + width[10], mid-15]
+		[startX + width[10] , mid-17],
+		[startX + width[13] , mid-17],
+		[startX + width[13], mid-15],
+		[startX + width[10], mid-15]
 	]
 
-	const part1 = [
-		[startx + width[5] , mid-ht[5]],
-		[startx + width[5]+95 , mid-ht[5]],
-		[startx + width[6]-50, mid+ht[5]],
-		[startx + width[5], mid+ht[5]]
+	const brokenRodPart1 = [
+		[startX + width[5] , mid-ht[5]],
+		[startX + width[5]+95 , mid-ht[5]],
+		[startX + width[6]-50, mid+ht[5]],
+		[startX + width[5], mid+ht[5]]
 	]
 
-	const part2 = [
-		[startx + width[5] + 100 , mid-ht[5]],
-		[startx + width[6] , mid-ht[5]],
-		[startx + width[6], mid+ht[5]],
-		[startx + width[6]-45, mid+ht[5]]
+	const brokenRodPart2 = [
+		[startX + width[5] + 100 , mid-ht[5]],
+		[startX + width[6] , mid-ht[5]],
+		[startX + width[6], mid+ht[5]],
+		[startX + width[6]-45, mid+ht[5]]
 	]
+	let coordinates = [];
+	let chart = [];
+	let step = 0;
 
-	function drawoval()
+	graph();
+	drawStatic();
+
+
+	function drawOval()
 	{
 		ctx.beginPath();
 		ctx.scale(0.5,1);
-		ctx.arc(1300,50,9,0,2*Math.PI);
+		ctx.arc(1000,50,9,0,2*Math.PI);
 		ctx.stroke();
 		ctx.fillStyle = "white";
 		ctx.fill();
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.fillStyle  = fill;
 	}
-	function drawheel(angle)
+
+
+	function draWheel(angle)
 	{
 		ctx.beginPath();
-		ctx.arc(startx + 75,50,radius,0,2*Math.PI);
-		ctx.moveTo(startx+75,50);
+		ctx.arc(startX + 75,50,radius,0,2*Math.PI);
+		ctx.moveTo(startX+75,50);
 		let dx = Math.cos(angle)*radius;
 		let dy = Math.sin(angle)*radius;
-		ctx.lineTo(startx+75+dx,50+dy);
+		ctx.lineTo(startX+75+dx,50+dy);
 
-		ctx.moveTo(startx+75,50);
+		ctx.moveTo(startX+75,50);
 		dx = Math.cos(90+angle)*radius;
 		dy = Math.sin(90+angle)*radius;
-		ctx.lineTo(startx+75+dx,50+dy);
+		ctx.lineTo(startX+75+dx,50+dy);
 
-		ctx.moveTo(startx+75,50);
+		ctx.moveTo(startX+75,50);
 		dx = Math.cos(180+angle)*radius;
 		dy = Math.sin(180+angle)*radius;
-		ctx.lineTo(startx+75+dx,50+dy);
+		ctx.lineTo(startX+75+dx,50+dy);
 
 		ctx.stroke();
 	}
-	
-	function draw()
+
+	function drawStatic()
 	{
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.fillStyle = fill;
@@ -133,39 +177,49 @@ document.addEventListener('DOMContentLoaded', function(){
 		ctx.lineJoin = "round";
 		let j = 0;
 
-		while( j < 15)
+		while(j<15)
 		{
 			let curr = [
-				[startx + width[j],mid - ht[j]],
-				[startx + width[j+1],mid-ht[j]],
-				[startx + width[j+1],mid+ht[j]],
-				[startx + width[j],mid+ht[j]]
+				[startX + width[j],mid - ht[j]],
+				[startX + width[j+1],mid-ht[j]],
+				[startX + width[j+1],mid+ht[j]],
+				[startX + width[j],mid+ht[j]]
 			]
 				if(flag==1)
 				{
 					
 					if(j==5)
 					{
-						drawobj(ctx,part1,"grey");
-						drawobj(ctx,part2,"grey");
+						drawObject(ctx,brokenRodPart1,"grey");
+						drawObject(ctx,brokenRodPart2,"grey");
 						j++;
 						continue;
 					}
 				}
 				if(j==2 || j==5 || j== 9 || j==13)
-					drawobj(ctx,curr,"grey");
+					drawObject(ctx,curr,"grey");
 				else
-					drawobj(ctx,curr,"black");
+					drawObject(ctx,curr,"black");
 			j++;
 		}
 		
-		drawobj(ctx,rod1,"black")
-		drawobj(ctx,rod2,"black")
-		drawoval();
-		drawheel(current_angle);
-		current_angle+=0.05;
-		 if(current_angle <= 7)
-			tmHandle = window.setTimeout(draw, 1000 / fps);
+		drawObject(ctx,rod1,"black")
+		drawObject(ctx,rod2,"black")
+		drawOval();
+		draWheel(currentAngle);
+	}
+
+	function draw()
+	{
+		drawStatic();
+
+		if(step<angle.length)
+			updateChart();
+
+		currentAngle+=0.05;
+
+		 if(currentAngle <= 1.5)
+			tmHandle = window.setTimeout(draw, 1000 / FPS);
 		else
 		{
 			if(flag == 0){
@@ -175,55 +229,52 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	}
 
-	let tmHandle = window.setTimeout(draw, 1000 / fps);
 
-	function graph() 
+	function graph()
 	{
-		let dps = []; 
-		let chart = new CanvasJS.Chart("chartContainer", 
+		coordinates.push({
+			x : 0,
+			y : 0
+		})
+		chart = new CanvasJS.Chart("chartContainer", 
 		{
 			title :{
-				text: "Stress v/s Strain" 
+				text: "Torque v/s Angle" 
 			},
 			axisY: {
 				includeZero: true,
-				title: "Stress (MPa)"
+				title: "Torque (N-m)"
 			},
 			axisX: {
 				includeZero: true,
-				title: "Strain"
+				title: "Angle (deg)"
 			},      
 			data: [{
 				type: "line",
-				dataPoints: dps
+				dataPoints: coordinates
 			}]
 		});
-		let j=0;
-		let xVal = 0;
-		let yVal = 0; 
-		let updateChart = function () 
-		{
-			xVal = charts[j].xx;            
-			yVal = charts[j].yy;        
-			dps.push({
-						x: xVal,
-						y: yVal
-				});
-			
-	
-			if (dps.length > 100)
-				dps.shift();
-			document.getElementById("angle").innerHTML = angle[j].toString() + " deg";
-			document.getElementById("torque").innerHTML = torque[j].toString() + " N-m";
-			if(j<angle.length -1)
-			{
-				chart.render();
-				j++;
-				id = window.setTimeout(updateChart, 5000 / fps);
-			}
-		};		
-		let id = window.setTimeout(updateChart, 5000 / fps);
 	}
-	graph();
+
+
 	
-})
+	function updateChart()
+	{
+		
+		let xVal = angle[step];            
+		let yVal = torque[step];        
+		coordinates.push({
+					x: xVal,
+					y: yVal
+			});
+		if (coordinates.length > 100)
+			coordinates.shift();
+		document.getElementById("angle").innerHTML = angle[step].toString() + " Mpa";
+		document.getElementById("torque").innerHTML = torque[step].toString();
+		if(step<angle.length)
+		{
+			chart.render();
+			step++;
+		}
+	}
+});
