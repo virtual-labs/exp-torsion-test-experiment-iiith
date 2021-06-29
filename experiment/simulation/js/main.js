@@ -185,10 +185,10 @@ document.addEventListener('DOMContentLoaded', function(){
 				[startX + width[j+1],mid+ht[j]],
 				[startX + width[j],mid+ht[j]]
 			]
-				if(flag==1)
+				if(flag === 1)
 				{
 					
-					if(j==5)
+					if(j === 5)
 					{
 						drawObject(ctx,brokenRodPart1,"grey");
 						drawObject(ctx,brokenRodPart2,"grey");
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function(){
 						continue;
 					}
 				}
-				if(j==2 || j==5 || j== 9 || j==13)
+				if(j===2 || j===5 || j===9 || j===13)
 					drawObject(ctx,curr,"grey");
 				else
 					drawObject(ctx,curr,"black");
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			tmHandle = window.setTimeout(draw, 1000 / FPS);
 		else
 		{
-			if(flag == 0){
+			if(flag === 0){
 				flag = 1;
 				draw();
 			}
