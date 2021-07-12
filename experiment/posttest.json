@@ -26,9 +26,9 @@
             "question": "The polar moment of inertia of a solid circular shaft of diameter (d) is",
             "answers": {
                 "a": "πd<sup>4</sup>/16",
-                "b": "π<sup>3</sup>/32",
-                "c": "π<sup>4</sup>/32",
-                "d": "π<sup>4</sup>/64"
+                "b": "πd<sup>3</sup>/32",
+                "c": "πd<sup>4</sup>/32",
+                "d": "πd<sup>4</sup>/64"
             },
             "correctAnswer": "c",
             "difficulty": "intermediate"
@@ -36,13 +36,13 @@
         {
             "question": "What is the shear stress acting on the outer surface of a hollow shaft subjected to a torque of 100 Nm?(The inner and outer diameter of the shaft is 15 mm and 30 mm respectively.)",
             "answers": {
-                "a": "50.26 N/mm^2",
-                "b": "40.24 N/mm^2",
-                "c": "20.120 N/mm^2",
-                "d": "8.74 N/mm^2"
+                "a": "50.26 N/mm<sup>2</sup>",
+                "b": "40.24 N/mm<sup>2</sup>",
+                "c": "20.120 N/mm<sup>2</sup>",
+                "d": "8.74 N/mm<sup>2</sup>"
             },
             "explanations": {
-                "c": "The polar moment of inertia of a hollow shaft of outer diameter (D) and inner diameter (d) is π/16(D^4-d^4)"
+                "c": "The polar moment of inertia of a hollow shaft of outer diameter (D) and inner diameter (d) is π/16(D^<sup>4</sup>-d^<sup>4</sup>)"
             },
             "correctAnswer": "c",
             "difficulty": "advanced"
