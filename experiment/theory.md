@@ -8,7 +8,7 @@ T/J = Gϴ/L <br>
 
 Where <br>
 T = Torque applied <br>
-J = polar moment of inertia of the shaft = πd4/32 <br>
+J = polar moment of inertia of the shaft = πd<sup>4</sup>/32 <br>
 C = rigidity modulus of the material <br>
 ϴ = relative angle of twist in radians <br>
 L = gauge length (length of the shaft over which the relative angle of twist is measured) <br>
