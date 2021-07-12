@@ -42,7 +42,7 @@
                 "d": "8.74 N/mm<sup>2</sup>"
             },
             "explanations": {
-                "c": "The polar moment of inertia of a hollow shaft of outer diameter (D) and inner diameter (d) is π/16(D^<sup>4</sup>-d^<sup>4</sup>)"
+                "c": "The polar moment of inertia of a hollow shaft of outer diameter (D) and inner diameter (d) is π/16(D<sup>4</sup>-d<sup>4</sup>)"
             },
             "correctAnswer": "c",
             "difficulty": "advanced"
