@@ -25,7 +25,7 @@
         {
             "question": "The polar moment of inertia of a solid circular shaft of diameter (d) is",
             "answers": {
-                "a": "π(d^2)/16",
+                "a": "π &sup4 /16",
                 "b": "π(d^3)/32",
                 "c": "π(d^4)/32",
                 "d": "π(d^4)/64"
