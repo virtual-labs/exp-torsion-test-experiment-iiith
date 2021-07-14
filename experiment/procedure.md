@@ -19,6 +19,16 @@
    ϴ = relative angle of twist in radians <br>
    L = gauge length (length of the shaft over which the relative angle of twist is measured) <br>
 
+**Virtual Procedure**
+1. Start the Experiment by clicking the play button.
+3. Observe the torque applied by the rotating wheel on the rod.
+4. As the simulation continues the different value of angle and torque is observerd.
+5. A Graph is plotted between the angle-torque values observed.
+6. The Experiment allows you to pause/play/restart the simulation to view the values of different parameters at every stage of simulation.
+
+NOTE: There are various features available for the graphs such as zoom, etc. The function/feature of each icon above the graphs becomes visible upon hovering over the concerned icon.
+
+
 
 
 
