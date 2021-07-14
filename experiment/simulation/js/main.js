@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     canvas.style = "border:3px solid;";
     const ctx = canvas.getContext("2d");
 
-    const fill = "black";
+    const fill = data.colors.rod;
     const lineWidth = 1.5;
     const originalFPS = 10;
     let FPS = 10;
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.scale(0.5, 1);
         ctx.arc(1000, 50, 9, 0, 2 * Math.PI);
         ctx.stroke();
-        ctx.fillStyle = "white";
+        ctx.fillStyle = data.colors.bg;
         ctx.fill();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.fillStyle = fill;
@@ -179,22 +179,22 @@ document.addEventListener('DOMContentLoaded', function() {
             if (flag === 1) {
 
                 if (j === 5) {
-                    drawObject(ctx, brokenRodPart1, "grey");
-                    drawObject(ctx, brokenRodPart2, "grey");
+                    drawObject(ctx, brokenRodPart1, data.colors.rod1);
+                    drawObject(ctx, brokenRodPart2, data.colors.rod1);
                     j++;
                     continue;
                 }
             }
             if (j === 2 || j === 5 || j === 9 || j === 13) {
-                drawObject(ctx, curr, "grey");
+                drawObject(ctx, curr, data.colors.rod1);
             } else {
-                drawObject(ctx, curr, "black");
+                drawObject(ctx, curr, data.colors.rod);
             }
             j++;
         }
 
-        drawObject(ctx, rod1, "black");
-        drawObject(ctx, rod2, "black");
+        drawObject(ctx, rod1, data.colors.rod);
+        drawObject(ctx, rod2, data.colors.rod);
         drawOval();
         draWheel(currentAngle);
     }
@@ -220,46 +220,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function graph() {
-        coordinates.push({
-            x: 0,
-            y: 0
-        });
-        chart = new CanvasJS.Chart("chartContainer", {
+
+        chart = [{
+            x: [0],
+            y: [0],
+            type: 'lines+markers'
+        }];
+
+        let layout = {
             title: {
                 text: "Torque v/s Angle"
             },
-            axisY: {
-                includeZero: true,
+            yaxis: {
                 title: "Torque (N-m)"
             },
-            axisX: {
-                includeZero: true,
+            xaxis: {
                 title: "Angle (deg)"
             },
-            data: [{
-                type: "line",
-                dataPoints: coordinates
-            }]
-        });
+        };
+        Plotly.newPlot(chartContainer, chart, layout);
     }
 
 
 
     function updateChart() {
 
-        let xVal = angle[step];
-        let yVal = torque[step];
-        coordinates.push({
-            x: xVal,
-            y: yVal
-        });
-        if (coordinates.length > 100) {
-            coordinates.shift();
-        }
+        let x = angle[step];
+        let y = torque[step];
         document.getElementById("angle").innerHTML = angle[step].toString() + " Mpa";
         document.getElementById("torque").innerHTML = torque[step].toString();
         if (step < angle.length) {
-            chart.render();
+            chart[0]['x'].push(x);
+            chart[0]['y'].push(y);
+            Plotly.redraw(chartContainer);
             step++;
         }
     }
