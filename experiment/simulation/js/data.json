@@ -1,0 +1,7 @@
+data = {
+    "colors": {
+        "bg": "white",
+        "rod": "black",
+        "rod1": "grey",
+    }
+}

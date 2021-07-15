@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<!-- Add CSS at the head of HTML file -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.6-b/css/style.min.css" />
     <link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<div class="columns is-centered">
+    <div class="column has-text-centered mt-2">
+        <button id="play" class="v-button">Play</button>
+        <button id="pause" class="v-button" disabled>Pause</button>
+        <button id="restart" class="v-button" disabled>Restart</button>
+        <p>Simulation speed: <span id="demo_speed"></span>x</p>
+        <input type="range" min="1" max="8" value="4" class="slider" id="speed">
+    </div>
+</div>
+
+<div class="columns is-centered">
+    <div class="column has-text-centered mt-0 mb-0">
+        <canvas class="main" id="main"> </canvas>
+    </div>
+</div>
+<div class="columns is-centered">
+    <div class="column is-two-fifth">
+        <div class="v-datalist-container">
+            <div class="v-datalist-title">Observation Table</div>
+            <div class="v-datalist-row v-bold">Length of Rod = 80mm</div>
+            <div class="v-datalist-row v-bold">Diameter of Rod = 6mm</div>
+            <div class="v-datalist-row v-bold">Polar MOI = 1.27235e-10 m<sup>4</sup></div>
+            <div class="v-datalist-row v-bold">Modulus of Rigidity = 29.473138 GPa</div>
+            <div class="v-datalist-row">
+                <div class="v-table-wrap">
+                    <table class="table is-bordered is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Angle</th>
+                                <th>Torque</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="angle">0.0 deg</td>
+                                <td id="torque">0.0 N-m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column has-text-centered">
+        <div id="chartContainer" class="mt-0"></div>
+    </div>
+</div>
+
+<script src='https://cdn.plot.ly/plotly-2.2.0.min.js'></script>
+<script src="./js/main.js"></script>
+<script src="./js/data.json"></script>
 </body>
+
 </html>
