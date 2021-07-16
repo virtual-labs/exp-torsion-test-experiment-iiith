@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             playButton.setAttribute("disabled", "true");
             pauseButton.setAttribute("disabled", "true");
+
         }
 
         currentAngle += 0.05;
