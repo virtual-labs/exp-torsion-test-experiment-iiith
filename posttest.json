@@ -1,0 +1,52 @@
+{
+    "version": 2.0,
+    "questions": [{
+            "question": "Which property is not required for shaft materials?",
+            "answers": {
+                "a": "High shear and tensile strength",
+                "b": "Good mach inability",
+                "c": "High Fatigue strength",
+                "d": "Good Cast ability"
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "The shear stress varies from centre to the surface of the shaft with",
+            "answers": {
+                "a": "Uniform rate",
+                "b": "Varying rate",
+                "c": "Remains same",
+                "d": "None of these"
+            },
+            "correctAnswer": "a",
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "The polar moment of inertia of a solid circular shaft of diameter (d) is",
+            "answers": {
+                "a": "πd<sup>4</sup>/16",
+                "b": "πd<sup>3</sup>/32",
+                "c": "πd<sup>4</sup>/32",
+                "d": "πd<sup>4</sup>/64"
+            },
+            "correctAnswer": "c",
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "What is the shear stress acting on the outer surface of a hollow shaft subjected to a torque of 100 Nm?(The inner and outer diameter of the shaft is 15 mm and 30 mm respectively.)",
+            "answers": {
+                "a": "50.26 N/mm<sup>2</sup>",
+                "b": "40.24 N/mm<sup>2</sup>",
+                "c": "20.120 N/mm<sup>2</sup>",
+                "d": "8.74 N/mm<sup>2</sup>"
+            },
+            "explanations": {
+                "c": "The polar moment of inertia of a hollow shaft of outer diameter (D) and inner diameter (d) is π/16(D<sup>4</sup>-d<sup>4</sup>)"
+            },
+            "correctAnswer": "c",
+            "difficulty": "advanced"
+        }
+
+    ]
+}

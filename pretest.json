@@ -1,0 +1,72 @@
+{
+    "version": 2.0,
+    "questions": [{
+            "question": "“Torsion” is defined as _________",
+            "answers": {
+                "a": "Compressive force",
+                "b": "Type of friction",
+                "c": "Twisting",
+                "d": "Object at rest"
+            },
+            "explanations": {
+                "c": "Torsion is defined as the twisting of a specimen caused by a certain amount of torque. Compressive forces are forces that are applied to an object that results in the specimen getting compacted."
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which of the following cannot be determined using a torsion test?",
+            "answers": {
+                "a": "Modulus of elasticity in shear",
+                "b": "Torsion yield strength",
+                "c": "Modulus of rupture",
+                "d": "Young’s modulus"
+            },
+            "explanations": {
+                "d": " Modulus of elasticity in shear, torsion yield strength and modulus of rupture can all be determined by performing torsion test on material."
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "________ is a measure of the strength of shaft in rotation.",
+            "answers": {
+                "a": "Torsional modulus",
+                "b": "Sectional modulus",
+                "c": "Polar modulus",
+                "d": "Torsional rigidity"
+            },
+            "explanations": {
+                "c": "The polar modulus is a measure of the strength of shaft in rotation. As the value of Polar modulus increases torsional strength increases."
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "The angle of twist can be written as ________",
+            "answers": {
+                "a": "TL/J",
+                "b": "CJ/TL",
+                "c": "TL/CJ",
+                "d": "T/J"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "What are the units of torsional rigidity?",
+            "answers": {
+                "a": "N-mm<sup>2</sup>",
+                "b": "N/mm",
+                "c": "N-mm",
+                "d": "N"
+            },
+            "explanations": {
+                "a": "The product of modulus of rigidity (C) and polar moment of inertia (J) is called torsional rigidity. Torsional rigidity is a torque that produces a twist of one radian in a shaft of unit length."
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        }
+
+    ]
+}
