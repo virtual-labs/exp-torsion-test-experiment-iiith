@@ -204,6 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (step < angle.length) {
             updateChart();
+        } else {
+            playButton.setAttribute("disabled", "true");
+            pauseButton.setAttribute("disabled", "true");
         }
 
         currentAngle += 0.05;
