@@ -1,0 +1,1 @@
+- To find the angle of twist and to obtain some of the mechanical properties of the given material by conducting torsion test. 
