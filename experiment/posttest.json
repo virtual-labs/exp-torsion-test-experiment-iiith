@@ -1,7 +1,7 @@
 {
     "version": 2.0,
     "questions": [{
-            "question": "Which property is not required for shaft materials?",
+            "question": "1. Which property is not required for shaft materials?",
             "answers": {
                 "a": "High shear and tensile strength",
                 "b": "Good mach inability",
@@ -12,7 +12,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "The shear stress varies from centre to the surface of the shaft with",
+            "question": "2. The shear stress varies from centre to the surface of the shaft with",
             "answers": {
                 "a": "Uniform rate",
                 "b": "Varying rate",
@@ -23,7 +23,7 @@
             "difficulty": "intermediate"
         },
         {
-            "question": "The polar moment of inertia of a solid circular shaft of diameter (d) is",
+            "question": "3. The polar moment of inertia of a solid circular shaft of diameter (d) is",
             "answers": {
                 "a": "πd<sup>4</sup>/16",
                 "b": "πd<sup>3</sup>/32",
@@ -34,7 +34,7 @@
             "difficulty": "intermediate"
         },
         {
-            "question": "What is the shear stress acting on the outer surface of a hollow shaft subjected to a torque of 100 Nm?(The inner and outer diameter of the shaft is 15 mm and 30 mm respectively.)",
+            "question": "4. What is the shear stress acting on the outer surface of a hollow shaft subjected to a torque of 100 Nm?(The inner and outer diameter of the shaft is 15 mm and 30 mm respectively.)",
             "answers": {
                 "a": "50.26 N/mm<sup>2</sup>",
                 "b": "40.24 N/mm<sup>2</sup>",
