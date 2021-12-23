@@ -1,7 +1,7 @@
 {
     "version": 2.0,
     "questions": [{
-            "question": "“Torsion” is defined as _________",
+            "question": "1. “Torsion” is defined as _________",
             "answers": {
                 "a": "Compressive force",
                 "b": "Type of friction",
@@ -15,7 +15,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "Which of the following cannot be determined using a torsion test?",
+            "question": "2. Which of the following cannot be determined using a torsion test?",
             "answers": {
                 "a": "Modulus of elasticity in shear",
                 "b": "Torsion yield strength",
@@ -29,7 +29,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "________ is a measure of the strength of shaft in rotation.",
+            "question": "3. ________ is a measure of the strength of shaft in rotation.",
             "answers": {
                 "a": "Torsional modulus",
                 "b": "Sectional modulus",
@@ -43,7 +43,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "The angle of twist can be written as ________",
+            "question": "4. The angle of twist can be written as ________",
             "answers": {
                 "a": "TL/J",
                 "b": "CJ/TL",
@@ -54,7 +54,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "What are the units of torsional rigidity?",
+            "question": "5. What are the units of torsional rigidity?",
             "answers": {
                 "a": "N-mm<sup>2</sup>",
                 "b": "N/mm",
