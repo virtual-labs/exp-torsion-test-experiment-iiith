@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const canvas = document.getElementById("main");
     canvas.width = 600;
-    canvas.height = 100;
-    canvas.style = "border:3px solid;";
+    canvas.height = 200;
+    // canvas.style = "border:3px solid;";
     const ctx = canvas.getContext("2d");
 
     const fill = data.colors.rod;
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let x = angle[step];
         let y = torque[step];
-        document.getElementById("angle").innerHTML = angle[step].toString() + " Mpa";
+        document.getElementById("angle").innerHTML = angle[step].toString();
         document.getElementById("torque").innerHTML = torque[step].toString();
         if (step < angle.length) {
             chart[0]['x'].push(x);
