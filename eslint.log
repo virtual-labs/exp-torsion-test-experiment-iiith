@@ -1,0 +1,18 @@
+
+/home/runner/work/exp-torsion-test-experiment-iiith/exp-torsion-test-experiment-iiith/experiment/simulation/js/main.js
+   81:18  warning  'data' is not defined                             no-undef
+  123:9   warning  'coordinates' is assigned a value but never used  no-unused-vars
+  136:25  warning  'data' is not defined                             no-undef
+  182:53  warning  'data' is not defined                             no-undef
+  183:53  warning  'data' is not defined                             no-undef
+  189:39  warning  'data' is not defined                             no-undef
+  191:39  warning  'data' is not defined                             no-undef
+  196:31  warning  'data' is not defined                             no-undef
+  197:31  warning  'data' is not defined                             no-undef
+  245:9   warning  'Plotly' is not defined                           no-undef
+  245:24  warning  'chartContainer' is not defined                   no-undef
+  259:13  warning  'Plotly' is not defined                           no-undef
+  259:27  warning  'chartContainer' is not defined                   no-undef
+
+✖ 13 problems (0 errors, 13 warnings)
+
