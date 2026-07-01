@@ -1,52 +1,158 @@
 {
-    "version": 2.0,
-    "questions": [{
-            "question": "1. Which property is not required for shaft materials?",
-            "answers": {
-                "a": "High shear and tensile strength",
-                "b": "Good mach inability",
-                "c": "High Fatigue strength",
-                "d": "Good Cast ability"
-            },
-            "correctAnswer": "d",
-            "difficulty": "beginner"
-        },
-        {
-            "question": "2. The shear stress varies from centre to the surface of the shaft with",
-            "answers": {
-                "a": "Uniform rate",
-                "b": "Varying rate",
-                "c": "Remains same",
-                "d": "None of these"
-            },
-            "correctAnswer": "a",
-            "difficulty": "intermediate"
-        },
-        {
-            "question": "3. The polar moment of inertia of a solid circular shaft of diameter (d) is",
-            "answers": {
-                "a": "πd<sup>4</sup>/16",
-                "b": "πd<sup>3</sup>/32",
-                "c": "πd<sup>4</sup>/32",
-                "d": "πd<sup>4</sup>/64"
-            },
-            "correctAnswer": "c",
-            "difficulty": "intermediate"
-        },
-        {
-            "question": "4. What is the shear stress acting on the outer surface of a hollow shaft subjected to a torque of 100 Nm?(The inner and outer diameter of the shaft is 15 mm and 30 mm respectively.)",
-            "answers": {
-                "a": "50.26 N/mm<sup>2</sup>",
-                "b": "40.24 N/mm<sup>2</sup>",
-                "c": "20.120 N/mm<sup>2</sup>",
-                "d": "8.74 N/mm<sup>2</sup>"
-            },
-            "explanations": {
-                "c": "The polar moment of inertia of a hollow shaft of outer diameter (D) and inner diameter (d) is π/16(D<sup>4</sup>-d<sup>4</sup>)"
-            },
-            "correctAnswer": "c",
-            "difficulty": "advanced"
-        }
-
-    ]
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Which property makes a material more resistant to twisting?",
+      "answers": {
+        "a": "High modulus of rigidity",
+        "b": "Low density",
+        "c": "High thermal conductivity",
+        "d": "Low melting point"
+      },
+      "explanations": {
+        "a": "Correct. A higher modulus of rigidity increases resistance to torsional deformation.",
+        "b": "Incorrect. Density does not determine torsional stiffness.",
+        "c": "Incorrect. Thermal conductivity is unrelated to torsional strength.",
+        "d": "Incorrect. Melting point does not determine torsional resistance."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. The shear stress in a solid circular shaft varies",
+      "answers": {
+        "a": "Uniformly across the radius",
+        "b": "Linearly from the centre to the outer surface",
+        "c": "Parabolically",
+        "d": "Randomly"
+      },
+      "explanations": {
+        "a": "Incorrect. Shear stress is not constant across the radius.",
+        "b": "Correct. Shear stress increases linearly with distance from the centre.",
+        "c": "Incorrect. The variation is not parabolic.",
+        "d": "Incorrect. The distribution follows a definite relationship."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "3. If the diameter of a solid circular shaft is doubled, its polar moment of inertia becomes",
+      "answers": {
+        "a": "2 times",
+        "b": "4 times",
+        "c": "8 times",
+        "d": "16 times"
+      },
+      "explanations": {
+        "a": "Incorrect. The polar moment depends on the fourth power of diameter.",
+        "b": "Incorrect. The increase is greater than four times.",
+        "c": "Incorrect. The increase is greater than eight times.",
+        "d": "Correct. Since $J \\propto d^4$, doubling the diameter increases J by sixteen times."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "4. A solid shaft of diameter 20 mm is subjected to a torque of 80 N-m. The polar moment of inertia is approximately 15708 mm<sup>4</sup>. The maximum shear stress is closest to",
+      "answers": {
+        "a": "25.5 N/mm<sup>2</sup>",
+        "b": "50.9 N/mm<sup>2</sup>",
+        "c": "101.9 N/mm<sup>2</sup>",
+        "d": "203.8 N/mm<sup>2</sup>"
+      },
+      "explanations": {
+        "a": "Incorrect. The calculation does not satisfy the torsion equation.",
+        "b": "Correct. Using $\\tau=Tr/J$, where $T=80000$ N-mm and $r=10$ mm gives approximately 50.9 N/mm<sup>2</sup>.",
+        "c": "Incorrect. This value is approximately twice the correct result.",
+        "d": "Incorrect. This value is much larger than the calculated stress."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "5. If the applied torque is doubled while all other quantities remain constant, the angle of twist becomes",
+      "answers": {
+        "a": "Half",
+        "b": "Unchanged",
+        "c": "Double",
+        "d": "Four times"
+      },
+      "explanations": {
+        "a": "Incorrect. The angle of twist is directly proportional to torque.",
+        "b": "Incorrect. Changing torque affects the angle of twist.",
+        "c": "Correct. The angle of twist is directly proportional to the applied torque.",
+        "d": "Incorrect. The relationship is linear, not quadratic."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "6. The SI unit of torque is",
+      "answers": {
+        "a": "N",
+        "b": "N/mm<sup>2</sup>",
+        "c": "N-m",
+        "d": "Pa"
+      },
+      "explanations": {
+        "a": "Incorrect. This is the unit of force.",
+        "b": "Incorrect. This is the unit of stress.",
+        "c": "Correct. Torque is measured in newton-metres.",
+        "d": "Incorrect. Pascal is the unit of pressure or stress."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "7. In the elastic region, the Torque vs. Angle of Twist graph is",
+      "answers": {
+        "a": "Parabolic",
+        "b": "Linear",
+        "c": "Exponential",
+        "d": "Horizontal"
+      },
+      "explanations": {
+        "a": "Incorrect. The relationship is not parabolic in the elastic region.",
+        "b": "Correct. Torque is directly proportional to angle of twist while the material remains elastic.",
+        "c": "Incorrect. The graph is not exponential.",
+        "d": "Incorrect. Torque increases with angle of twist."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. Which quantity is directly measured during the torsion experiment?",
+      "answers": {
+        "a": "Torque and angle of twist",
+        "b": "Stress and strain",
+        "c": "Load and elongation",
+        "d": "Pressure and volume"
+      },
+      "explanations": {
+        "a": "Correct. The experiment records torque and the corresponding angle of twist.",
+        "b": "Incorrect. These are calculated quantities.",
+        "c": "Incorrect. These measurements belong to tensile testing.",
+        "d": "Incorrect. These quantities are unrelated to torsion testing."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "9. The modulus of rigidity is calculated from the slope of which graph?",
+      "answers": {
+        "a": "Stress vs. Strain",
+        "b": "Load vs. Extension",
+        "c": "Torque vs. Angle of Twist",
+        "d": "Force vs. Time"
+      },
+      "explanations": {
+        "a": "Incorrect. This graph is used in tensile testing.",
+        "b": "Incorrect. This graph is not used for torsion.",
+        "c": "Correct. The modulus of rigidity is obtained from torque-angle observations together with specimen dimensions.",
+        "d": "Incorrect. Time is not used in this calculation."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    }
+  ]
 }
