@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. What does torsion refer to in a structural member?",
+      "answers": {
+        "a": "Compression",
+        "b": "Twisting due to an applied torque",
+        "c": "Bending under transverse load",
+        "d": "Axial stretching"
+      },
+      "explanations": {
+        "a": "Incorrect. Compression shortens a member but does not twist it.",
+        "b": "Correct. Torsion is the twisting of a member caused by an applied torque.",
+        "c": "Incorrect. Bending results from transverse loading rather than torque.",
+        "d": "Incorrect. Axial stretching occurs under tensile loading."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. Which property is primarily determined from a torsion test conducted within the elastic range?",
+      "answers": {
+        "a": "Modulus of rigidity",
+        "b": "Young's modulus",
+        "c": "Bulk modulus",
+        "d": "Poisson's ratio"
+      },
+      "explanations": {
+        "a": "Correct. A torsion test is commonly used to determine the modulus of rigidity (shear modulus).",
+        "b": "Incorrect. Young's modulus is typically determined using a tensile or compression test.",
+        "c": "Incorrect. Bulk modulus relates to volumetric compression.",
+        "d": "Incorrect. Poisson's ratio is not directly obtained from this experiment."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. The angle of twist of a shaft increases when",
+      "answers": {
+        "a": "Torque increases",
+        "b": "Diameter increases",
+        "c": "Polar moment of inertia increases",
+        "d": "Modulus of rigidity increases"
+      },
+      "explanations": {
+        "a": "Correct. A larger applied torque produces a greater angle of twist.",
+        "b": "Incorrect. Increasing diameter increases torsional stiffness.",
+        "c": "Incorrect. A larger polar moment of inertia reduces twisting.",
+        "d": "Incorrect. A higher modulus of rigidity makes the shaft more resistant to twisting."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. The torsion equation is",
+      "answers": {
+        "a": "$\\frac{T}{J}=\\frac{G\\theta}{L}$",
+        "b": "$\\frac{T}{L}=\\frac{GJ}{\\theta}$",
+        "c": "$\\frac{J}{T}=\\frac{GL}{\\theta}$",
+        "d": "$\\frac{T}{J}=\\frac{L}{G\\theta}$"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Correct. For a circular shaft within the elastic limit, the torsion equation is $\\frac{T}{J}=\\frac{\\tau}{R}=\\frac{G\\theta}{L}$.",
+        "b": "Incorrect. This expression is not the torsion equation.",
+        "c": "Incorrect. The variables are arranged incorrectly.",
+        "d": "Incorrect. The relationship between torque, rigidity, and angle of twist is incorrect."
+      }
+    },
+    {
+      "question": "5. The polar moment of inertia of a solid circular shaft of diameter $d$ is",
+      "answers": {
+        "a": "$\\frac{\\pi d^{4}}{64}$",
+        "b": "$\\frac{\\pi d^{3}}{32}$",
+        "c": "$\\frac{\\pi d^{4}}{32}$",
+        "d": "$\\frac{\\pi d^{2}}{4}$"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Incorrect. This is the second moment of area of a solid circular section, not the polar moment of inertia.",
+        "b": "Incorrect. The power of the diameter is incorrect.",
+        "c": "Correct. The polar moment of inertia of a solid circular shaft is $J=\\frac{\\pi d^{4}}{32}$.",
+        "d": "Incorrect. This is the cross-sectional area of a solid circular shaft."
+      }
+    },
+    {
+      "question": "6. Which graph is typically obtained in a torsion test?",
+      "answers": {
+        "a": "Stress vs. Strain",
+        "b": "Torque vs. Angle of Twist",
+        "c": "Load vs. Extension",
+        "d": "Force vs. Time"
+      },
+      "explanations": {
+        "a": "Incorrect. This graph is commonly obtained in a tensile test.",
+        "b": "Correct. The torsion experiment records torque and the corresponding angle of twist.",
+        "c": "Incorrect. This graph is associated with tensile testing.",
+        "d": "Incorrect. Time is not the primary measured quantity."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. A longer shaft subjected to the same torque will",
+      "answers": {
+        "a": "Experience a smaller angle of twist",
+        "b": "Experience a larger angle of twist",
+        "c": "Experience the same angle of twist",
+        "d": "Experience zero twist"
+      },
+      "explanations": {
+        "a": "Incorrect. Increasing length reduces torsional stiffness.",
+        "b": "Correct. The angle of twist is directly proportional to shaft length.",
+        "c": "Incorrect. Shaft length affects twisting.",
+        "d": "Incorrect. A shaft under torque will twist."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "8. Which material property governs resistance to twisting?",
+      "answers": {
+        "a": "Young's modulus",
+        "b": "Bulk modulus",
+        "c": "Modulus of rigidity",
+        "d": "Poisson's ratio"
+      },
+      "explanations": {
+        "a": "Incorrect. Young's modulus relates to axial loading.",
+        "b": "Incorrect. Bulk modulus relates to volume change.",
+        "c": "Correct. Modulus of rigidity measures resistance to shear deformation caused by torsion.",
+        "d": "Incorrect. Poisson's ratio is not the governing property here."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "9. During elastic torsion of a circular shaft, the maximum shear stress occurs at the",
+      "answers": {
+        "a": "Centre",
+        "b": "Mid-radius",
+        "c": "Neutral axis",
+        "d": "Outer surface"
+      },
+      "explanations": {
+        "a": "Incorrect. Shear stress is zero at the centre.",
+        "b": "Incorrect. Shear stress increases continuously with radius.",
+        "c": "Incorrect. A circular shaft under torsion does not have a neutral axis like bending.",
+        "d": "Correct. Shear stress is maximum at the outer surface."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    }
+  ]
+}

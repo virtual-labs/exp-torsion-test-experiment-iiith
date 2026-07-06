@@ -1,0 +1,1 @@
+To perform a torsion test on a circular specimen using a torsion testing machine and determine its mechanical properties such as the Modulus of Rigidity (Shear Modulus), the relationship between applied torque and angle of twist, and the torsional behaviour of the material within its elastic limit.
