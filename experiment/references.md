@@ -14,6 +14,6 @@
 
 8. ASTM E143 – Standard Test Method for Shear Modulus at Room Temperature, ASTM International.
 
-9. [Strength of Materials Laboratory Manual, Indian Institute of Technology Madras (IIT Madras)](https://home.iitm.ac.in/kramesh/Strength%20of%20Materials%20Laboratory%20Manual.pdf)
+9. [Strength of Materials Laboratory Manual](https://home.iitm.ac.in/kramesh/Strength%20of%20Materials%20Laboratory%20Manual.pdf), Indian Institute of Technology Madras (IIT Madras).
 
 10. Gere, J.M., _Theory of Elastic Stability_, McGraw-Hill Education.
